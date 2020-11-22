@@ -1,5 +1,11 @@
 import React, { Component } from 'react'
 import Background from '../pics/background-login.jpg'
+import {
+    BrowserRouter as Router,
+    Route, 
+    Link, 
+    Redirect
+  } from 'react-router-dom'; 
 
 
 
@@ -41,7 +47,7 @@ export class Login extends Component {
                         <h4>{this.props.onErr()?(<span>Incorrect Email or password...</span>):(<span></span>)}</h4>
                         <input type="password" placeholder="Password" onChange={this.passHandler}></input>
                         <button onClick={this.onLogin}>Login</button>
-                        <h5>You don't have account? <span >Register now</span></h5>
+                        <h5>You don't have account? <span ><Link to = '/register/seller'>Register now</Link></span></h5>
                     </div>
                 </div>
             </div>

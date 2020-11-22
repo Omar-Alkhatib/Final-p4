@@ -16,7 +16,7 @@ const getUserURL = (req, res) => {
 // to get the monthly sales month-to-date for the seller:
 const getCurrentMonthlySales = (req, res) => {
     console.log("user_id:", req.params.id)
-    let sql = `SELECT SUM(p.price) AS monthly_sales FROM product p JOIN sold_item si ON p.id = si.id WHERE p.seller_id = ${req.params.id} AND MONTH(CURRENT_DATE()) = MONTH(si.created_at) `
+    let sql = `SELECT SUM(si.price) AS monthly_sales FROM product p JOIN sold_item si ON p.id = si.product_id WHERE p.seller_id = ${req.params.id} AND MONTH(CURRENT_DATE()) = MONTH(si.created_at) `
     let query = db.query(sql, (err, result) => {
         if (err) throw err
         console.log("getCurrentMonthlySales called")

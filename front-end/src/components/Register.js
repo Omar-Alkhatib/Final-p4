@@ -76,7 +76,7 @@ export class Register extends Component {
                             <label > Register as a seller</label>
                         </div>
                         <button onClick={this.onRegister}>Register</button>
-                        <h5>Already have account? <span>Login now </span></h5>
+                        <h5>Already have account? <span><Link to = '/login'>Login Now</Link></span></h5>
 
                     </div>
                 </div>
